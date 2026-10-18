@@ -1,29 +1,56 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-<head>
-  <meta charset="UTF-8">
-  <title>Módulo de Pagamentos</title>
-  <style>
-    body { font-family: sans-serif; display: grid; place-items: center; height: 90vh; background: #f0f2f5; }
-    .card { background: white; padding: 2rem; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); width: 320px; }
-    button { width: 100%; padding: 10px; background: #0066cc; color: white; border: none; border-radius: 4px; font-weight: bold; cursor: pointer; margin-top: 10px; }
-  </style>
-</head>
-<body>
-  <div class="card">
-    <h2>Resumo da Fatura</h2>
-    <p>Valor Original: <strong>R$ 100,00</strong></p>
-    <p>Taxa de Atraso: <strong>10%</strong></p>
-    <button onclick="calcular()">Calcular Total</button>
-    <h3 id="resultado">Total: --</h3>
-  </div>
 
-  <script src="script.js"></script>
-  <script>
-    function calcular() {
-      const total = calcularTotalComJuros(100, 0.10);
-      document.getElementById('resultado').innerText = `Total: R$ ${total.toFixed(2)}`;
-    }
-  </script>
+<head>
+    <meta charset="UTF-8">
+    <title>Módulo de Pagamentos</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            display: grid;
+            place-items: center;
+            height: 90vh;
+            background: #f0f2f5;
+        }
+
+        .card {
+            background: white;
+            padding: 1rem 2rem;            
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            width: 320px;
+        }
+
+        button {
+            width: 100%;
+            padding: 10px;
+            background: #0066cc;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            font-weight: bold;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="card">
+        <h2>Resumo da Fatura</h2>
+        <p>Valor Original: <strong>R$ 100,00</strong></p>
+        <p>Taxa de Atraso: <strong>10%</strong></p>
+        <button onclick="calcular()">Calcular Total</button>
+        <h3 id="resultado">Total: --</h3>
+    </div>
+
+    <script src="script.js"></script>
+    <script>
+        function calcular() {
+            const total = calcularTotalComJuros(100, 0.10);
+            document.getElementById('resultado').innerText = `Total: R$ ${total.toFixed(2)}`;
+        }
+    </script>
 </body>
+
 </html>
